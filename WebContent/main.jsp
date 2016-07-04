@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" ng-app="app" ng-id="app">
 <head>
@@ -11,14 +9,7 @@
 	type="image/x-icon" />
 <meta charset="utf-8">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-<meta name="description"
-	content="더이상 낚이지 마세요. 빅데이터 분석으로 전국 어디든 맛집 정리가 잘되어 있습니다. 사는 동네부터 검색해 보세요." />
-<meta property="og:image"
-	content="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/img/diningcode_logo.png" />
-<meta property="og:title" content="빅데이터 맛집검색, 다이닝코드" />
-<meta property="og:url" content="http://www.diningcode.com" />
-<meta property="og:site_name" content="다이닝코드" />
-<meta property="og:description" content="빅데이터 맛집검색, 다이닝코드" />
+
 <!-- jQuery -->
 <script type="text/javascript"
 	src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/jquery/1.11.2/jquery.min.js?2016063002"></script>
@@ -28,6 +19,7 @@
 	src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/js/jquery.cookie.js?2016063002"></script>
 <link type="text/css" rel="stylesheet"
 	href="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/jqueryui/1.11.4/jquery-ui.min.css?2016063002" />
+
 <!-- Angular -->
 <script type="text/javascript"
 	src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/angularjs/1.4.3/angular.min.js?2016063002"></script>
@@ -35,21 +27,26 @@
 	src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/angularjs/1.4.3/angular-animate.min.js?2016063002"></script>
 <script type="text/javascript"
 	src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/bootstrap/ui-bootstrap-tpls-0.13.0.min.js?2016063002"></script>
+
 <!-- Facebook -->
 <script type="text/javascript"
 	src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/FB_script.js?2016063002"></script>
 <link type="text/css" rel="stylesheet"
 	href="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/css/style.css?2016063002" />
+
 <!-- Bootstrap -->
 <script type="text/javascript"
 	src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/bootstrap/bootstrap.min.js?2016063002"></script>
 <link type="text/css" rel="stylesheet"
 	href="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/bootstrap/bootstrap.min.css?2016063002" />
+
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]><script type="text/javascript" src="bootstrap/html5shiv.js?2016063002"></script><script type="text/javascript" src="bootstrap/respond.min.js?2016063002"></script><![endif]-->
+
 <!-- font-awesome -->
 <link rel="stylesheet"
 	href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css?2016063002">
+
 <!-- Custom -->
 <link type="text/css" rel="stylesheet"
 	href="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/index.css?2016063002" />
@@ -58,11 +55,13 @@
 <script
 	src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/notice/noticeApp.js?2016063002"
 	type="text/javascript"></script>
+
 <!--fb_pixel_code-->
 <script type=text/javascript>
 	var gps = false;
 </script>
-<title>빅데이터 맛집검색, 다이닝코드</title>
+
+<title>모임을 보여줘, 쇼모임</title>
 <script>
 	(function(i, s, o, g, r, a, m) {
 		i['GoogleAnalyticsObject'] = r;
@@ -78,6 +77,7 @@
 	ga('create', 'UA-46679784-1', 'diningcode.com');
 	ga('send', 'pageview');
 </script>
+
 <!-- Facebook Pixel Code -->
 <script>
 	!function(f, b, e, v, n, t, s) {
@@ -109,7 +109,7 @@
 <!-- End Facebook Pixel Code -->
 </head>
 <body>
-	<div ng-include="'sharedApp/popup/event.php?2016063002'"></div>
+	
 	<script
 		src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/login_module.js?2016063002"></script>
 	<link
@@ -461,11 +461,9 @@
 			<div id="menu_div">
 				<div id="menu_nav">
 					<ul id="menu_nav_list">
-						<li><a href="intro.php">쇼모임 소개</a></li>
-						<li><a href="notice.php">쇼모임 뉴스</a></li>
-						<li><a href="event.php">이벤트</a></li>
-						<li><a href="faq.php">FAQ</a></li>
-						<li><a href="magazine.php">매거진</a></li>
+						<li><a href="intro.php">모임 홈</a></li>
+						<li><a href="notice.php">모임 찾기</a></li>
+						<li><a href="event.php">설정</a></li>
 					</ul>
 					<script type="text/javascript"
 						src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/user_menu.js?2016063002"></script>
@@ -912,147 +910,26 @@
 				<div id="main_notice_div" ng-controller="noticeCtrl">
 					<notice-dir ng-if="notice" ng-model="notice"></notice-dir>
 				</div>
-				<div id="report_new_rest_button">맛집 등록 신청하기</div>
 			</div>
 		</div>
 		<div id="ext_div">
 			<div id="dc-ext-left"></div>
 			<div id="dc-ext-center">
 				<div id="dc-stat">
-					이제 쇼모임이다.!
-				</div>
-				<div id="dc-app-store">
-					<a class="dc-app-store-link"
-						href="https://itunes.apple.com/us/app/dainingkodeu-bigdeiteo-masjibgeomsaeg/id1042893804?l=ko&ls=1&mt=8"
-						target="_blank"> <img
-						src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/img/main/main_install_iOS.png" />
-						<span>iOS</span>
-					</a> <a class="dc-app-store-link"
-						href="https://play.google.com/store/apps/details?id=com.diningcode"
-						target="_blank"> <img
-						src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/img/main/main_install_android.png" />
-						<span>Android</span>
-					</a>
+					이제 쇼모임이다~!
 				</div>
 			</div>
-			<div id="dc-ext-right">
-				<div id="dc-social">
-					<a class="dc-social-link" href="http://www.facebook.com/diningcode"
-						target="_blank"><img
-						src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/img/main/main_sns_facebook.png" /></a>
-					<a class="dc-social-link" href="http://www.twitter.com/diningcode"
-						target="_blank"><img
-						src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/img/main/main_sns_twitter.png" /></a>
-					<a class="dc-social-link" href="https://instagram.com/diningcode/"
-						target="_blank"><img
-						src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/img/main/main_sns_insta.png" /></a>
-				</div>
-			</div>
+			<div id="dc-ext-right"></div>
 		</div>
 		<link type="text/css" rel="stylesheet"
 			href="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/footer.css?2016063002" />
 		<div id="footer_div">
 			<div id="footer_text">
-				© 2016 showmoim · <a href="intro.php">쇼모임 소개</a> · <a
-					href="policy.service.php">이용약관</a> · <a href="policy.privacy.php">개인정보취급방침</a>
-				· <a href="mailto:contact@diningcode.com">문의</a>
+				© 2016 kitri smart platform 18th showmoim · <a href="intro.php">쇼모임 소개</a> · 
+				<a href="mailto:contact@diningcode.com">문의</a>
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript"
-		src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/report/report_new_popup.js?2016063002"></script>
-	<link type="text/css" rel="stylesheet"
-		href="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/report/report_new_popup.css?2016063002" />
-	<div id="report_new_popup_parent">
-		<div id="report_new_popup">
-			<div id="report_new_title">
-				<img class="report_logo_img"
-					src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/img/user/report/report_logo.png" />
-				<div class="report_title_text">신규맛집신청하기</div>
-				<img id="report_new_cancel_img"
-					src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/img/user/report/cancel_ivory.png" />
-			</div>
-			<div id="report_new_contents">
-				<table id="report_new_table">
-					<tr class="check">
-						<td class="item_header_cell">맛집이름</td>
-						<td class="item_body_cell"><input id="report_name"
-							class="report_new_table_input" type="text" placeholder="한글이름(필수)"
-							autofocus /> <input id="report_en_name"
-							class="report_new_table_input" type="text" placeholder="영문이름(선택)" />
-						</td>
-					</tr>
-					<tr>
-						<td class="item_header_cell">주소</td>
-						<td class="item_body_cell"><input id="report_address_1"
-							class="input_width_long report_new_table_input" type="text"
-							placeholder="지번 주소(필수)" /></td>
-					</tr>
-					<tr>
-						<td class="item_header_cell"></td>
-						<td class="item_body_cell"><input id="report_address_2"
-							class="input_width_long report_new_table_input" type="text"
-							placeholder="도로명 주소(선택)" /></td>
-					</tr>
-					<tr>
-						<td class="item_header_cell">전화번호</td>
-						<td class="item_body_cell"><input id="report_tel_0"
-							class="tel report_new_table_input" type="tel" placeholder="(필수)" />
-						</td>
-					</tr>
-				</table>
-				<div id="info">* 신청할 맛집의 이름, 주소, 전화번호를 입력해 주세요.</div>
-			</div>
-			<div id="sender_input">
-				<label>작성자연락처</label> <input id="sender"
-					class="input_width_long report_new_table_input" type="text"
-					placeholder="이메일주소" value=''>
-			</div>
-			<div id="privacy_check">
-				<label id="privacy_check_label">개인정보수집동의(필수)</label> <input
-					type="checkbox" id="privacy_check_yes">동의</input>
-			</div>
-			<img id="report_new_submit_img"
-				src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/img/user/report/report_new_submit_bt.png"
-				onClick="report_new();" />
-		</div>
-	</div>
-	<div class="modal fade" id="privacyPolicyModal2" tabindex="-1"
-		role="dialog" aria-labelledby="privacyPolicyModal2" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class='loading-wrap-lg'>
-					<div class='loader'></div>
-				</div>
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<img
-							src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/img/login/i_close_gr_sm.png" />
-					</button>
-					<h4 class="modal-title" id="myModalLabel">개인정보 수집 · 이용에 관한 사항</h4>
-				</div>
-				<div class="modal-body modal-body-gray">
-					<div class="modal-header-shadow"></div>
-					<div class="p-all10">
-						<p id="privacyPolicyText">회사는 민원처리를 위해 귀하의 개인정보를 아래와 같이 수집하고자
-							합니다.</p>
-						<table id="privacyPolicyTable">
-							<tr>
-								<td>수집하는 개인정보 항목</td>
-								<td>수집 및 이용목적</td>
-								<td>보유 및 이용기간</td>
-							</tr>
-							<tr>
-								<td>이메일</td>
-								<td>민원 및 고충 처리</td>
-								<td>처리 후 7일까지</td>
-							</tr>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	
 </body>
 </html>
