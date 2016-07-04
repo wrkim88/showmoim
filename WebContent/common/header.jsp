@@ -18,7 +18,9 @@
 		</ul>
 		
 		<script type="text/javascript"
-			src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/user_menu.js?2016063002"></script>
+			src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/user_menu.js?2016063002">
+		
+		</script>
 		<link
 			href="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/user_menu.css?2016063002"
 			rel="stylesheet">
