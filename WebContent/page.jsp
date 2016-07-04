@@ -11,8 +11,7 @@
 <%@include file="/common/header.jsp"%><br><br><br>
 
 <div align="center">개발하시오</div>
-dcgd
+
 <%@include file="/common/footer.jsp" %>
 </body>
 </html>
-cdfcfdg
