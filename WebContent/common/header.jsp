@@ -10,19 +10,18 @@
 
 <div id="menuArea">
 	<div id="menuWrapper">
-		<a id="menuLogo" href="http://www.diningcode.com"><img
-			src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/img/list/logo/logo.png" /></a>
+		<a id="menuLogo" href="${root}/main.jsp"><img src="${root}/image/logo.PNG" /></a>
 		<ul id="menuNavi">
-			<li><a href="page.jsp">모임 홈</a></li>
-			<li><a href="page.jsp">모임 찾기</a></li>
-			<li><a href="page.jsp">설정</a></li>
+			<li><a href="${root}/page.jsp">모임 홈</a></li>
+			<li><a href="${root}/page.jsp">모임 찾기</a></li>
+			<li><a href="${root}/page.jsp">설정</a></li>
 		</ul>
+		
 		<script type="text/javascript"
 			src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/user_menu.js?2016063002"></script>
 		<link
 			href="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/user_menu.css?2016063002"
 			rel="stylesheet">
-
 		<script>
 			var w_server = "http://www.diningcode.com/";
 			var dicons = "https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/";
@@ -48,13 +47,8 @@
 
 				<ul class="dropdown-menu" role="menu" aria-labelledby="userLabel"
 					id="my_menu_list">
-					<li><a href="#"
-						onClick="document.location.href='http://www.diningcode.com/bucketlist.php'">나의
-							맛집</a></li>
-					<li><a href="#"
-						onClick="document.location.href='http://www.diningcode.com/myprofile.php'">프로필
-							수정</a></li>
-
+					<li><a href="#">내 모임</a></li>
+					<li><a href="#">프로필 수정</a></li>
 					<li><a href="#" id="logout">로그아웃</a></li>
 				</ul>
 			</div>

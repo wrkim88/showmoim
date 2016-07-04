@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <div class="dc-area" id="footerArea">
 	<link type="text/css" rel="stylesheet"
 		href="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/footer.css?2016063002" />
