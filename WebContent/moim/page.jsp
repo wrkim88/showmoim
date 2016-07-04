@@ -11,7 +11,7 @@
 <body>
 <%@include file="/common/header.jsp"%><br><br><br>
 
-<div align="center">개발하시오</div>
+<div align="center">모임 홈 화면</div>
 
 <%@include file="/common/footer.jsp" %>
 </body>
