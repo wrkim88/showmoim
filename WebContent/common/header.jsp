@@ -14,11 +14,13 @@
 			src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/img/list/logo/logo.png" /></a>
 		<ul id="menuNavi">
 			<li><a href="page.jsp">모임 홈</a></li>
-			<li><a href="page.jsp">모임 찾기</a></li>
+			<li><a href="search.jsp">모임 찾기</a></li>
 			<li><a href="page.jsp">설정</a></li>
 		</ul>
 		<script type="text/javascript"
-			src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/user_menu.js?2016063002"></script>
+			src="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/user_menu.js?2016063002">
+		
+		</script>
 		<link
 			href="https://dfzrjox9sv97l.cloudfront.net/dicons_20160627/user_menu.css?2016063002"
 			rel="stylesheet">
