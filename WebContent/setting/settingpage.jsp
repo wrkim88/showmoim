@@ -8,12 +8,14 @@
 <%@include file="/common/common.jsp" %>
 </head>
 <body>
+<center>
 <%@include file="/common/header.jsp" %>
 <br><br><br><br>
 <div align="center">
-개발하시오
+설정 페이지
 </div>
 <br><br><br>
 <%@include file="/common/footer.jsp" %>
+</center>
 </body>
 </html>

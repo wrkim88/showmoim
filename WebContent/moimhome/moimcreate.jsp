@@ -11,7 +11,14 @@
 <%@include file="/common/header.jsp" %>
 <br><br><br><br>
 <div align="center">
-개발하시오
+<h2>모임 만들기</h2><br><br>
+<div style="background-color: white;">
+<input type="text" placeholder="모임 명"><br>
+<input type="file"><br>
+<input type="text" placeholder="카테고리"><br>
+<input type="text" placeholder="모임 인원"><br>
+<input type="text" placeholder="모임 소개">
+</div>
 </div>
 <br><br><br>
 <%@include file="/common/footer.jsp" %>

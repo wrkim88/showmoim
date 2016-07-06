@@ -3,21 +3,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>쇼모임</title>
+<meta charset="utf-8" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <%@include file="/common/common.jsp"%>
+<title>showmoim</title>
 </head>
 <body>
 <center>
-<%@include file="/common/header.jsp"%>
-<br><br><br><br>
+<%@include file="/common/header.jsp"%><br><br><br>
 
-<div style="width: 60%; height: 1000px;">
+<div style="width: 60%;">
 	<div style="width: 15%; float: left;">
 		<div style="background-color: white; height: 200px;">
 			모임정보<br>
 			kitri smart platform 18th<br><br>
-			<img src="${root}/images/kitri.png">
+			<img src="${root}/image/123.png">
 		</div>
 		<button type="submit" class="btn btn-success">가입하기</button>
 	</div>
@@ -43,7 +43,6 @@
 	
 </div>
 
-<br><br><br>
 <%@include file="/common/footer.jsp"%>
 </center>
 </body>
