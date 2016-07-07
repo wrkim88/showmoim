@@ -25,10 +25,16 @@
 			</div>
 
 			<div class="collapse navbar-collapse" id="st-navbar-collapse">
-				<ul class="nav navbar-nav navbar-right">
+				<ul class="nav navbar-nav">
+					<li><img src="${root}/images/blank.png"></li>
 					<li><a href="${root}/moimhome/moimhome.jsp">모임 홈</a></li>
 					<li><a href="${root}/moimsearch/search.jsp">모임 찾기</a></li>
 					<li><a href="${root}/setting/settingpage.jsp">설정</a></li>
+					
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><img src="${root}/images/login.png" class="img-circle" width="50" height="50"></li>
+					<li><img src="${root}/images/blank.png"></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->

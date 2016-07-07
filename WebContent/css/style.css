@@ -57,7 +57,6 @@
 		-moz-transition: all 0.2s ease-in-out;
 		-ms-transition: all 0.2s ease-in-out;
 		-o-transition: all 0.2s ease-in-out;
-		transition: all 0.2s ease-in-out;
 	}
 
 	a:hover {
@@ -149,7 +148,6 @@
 		-moz-transition: all 0.2s ease-in-out;
 		-ms-transition: all 0.2s ease-in-out;
 		-o-transition: all 0.2s ease-in-out;
-		transition: all 0.2s ease-in-out;
 	}
 
 	.btn-send:hover{
@@ -169,7 +167,6 @@
 		-moz-transition: all 0.2s ease-in-out;
 		-ms-transition: all 0.2s ease-in-out;
 		-o-transition: all 0.2s ease-in-out;
-		transition: all 0.2s ease-in-out;
 	}
 
 	.btn-readmore:hover{
@@ -299,7 +296,6 @@
 		-moz-transition: 300ms;
 		-o-transition: 300ms;
 		-ms-transition: 300ms;
-		transition: 300ms;
 	}
 
 	.home-carousel-left {
@@ -327,7 +323,6 @@
 		-webkit-transform: scale(0.5);
 		-o-transform: scale(0.5);
 		-ms-transform: scale(0.5);
-		transform: scale(0.5);
 	}
 
 	#home-carousel .item h1 {
@@ -335,7 +330,6 @@
 		-moz-transition: all 0.5s ease-in-out 0.15s;
 		-ms-transition: all 0.5s ease-in-out 0.15s;
 		-o-transition: all 0.5s ease-in-out 0.15s;
-		transition: all 0.5s ease-in-out 0.15s;
 	}
 
 	#home-carousel .item.active h1, 
@@ -346,7 +340,6 @@
 		-webkit-transform: scale(1);
 		-o-transform: scale(1);
 		-ms-transform: scale(1);
-		transform: scale(1);
 	}
 
 	#home-carousel .item h2 {
@@ -354,7 +347,6 @@
 		-moz-transition: all 0.5s ease-in-out 0.30s;
 		-ms-transition: all 0.5s ease-in-out 0.30s;
 		-o-transition: all 0.5s ease-in-out 0.30s;
-		transition: all 0.5s ease-in-out 0.30s;
 	}
 
 	#home-carousel .item p {
@@ -362,7 +354,6 @@
 		-moz-transition: all 0.5s ease-in-out 0.45s;
 		-ms-transition: all 0.5s ease-in-out 0.45s;
 		-o-transition: all 0.5s ease-in-out 0.45s;
-		transition: all 0.5s ease-in-out 0.45s;
 	}
 
 
@@ -414,17 +405,14 @@
 	.isotope, .isotope .isotope-item {/* change duration value to whatever you like */
 	    -webkit-transition-duration: 0.8s;
 	    -moz-transition-duration: 0.8s;
-	    transition-duration: 0.8s;
 	}
 	.isotope {
 	    -webkit-transition-property: height, width;
 	    -moz-transition-property: height, width;
-	    transition-property: height, width;
 	}
 	.isotope .isotope-item {
 	    -webkit-transition-property: -webkit-transform, opacity;
 	    -moz-transition-property:-moz-transform, opacity;
-	    transition-property:transform, opacity;
 	}
 
 	#our-works{
@@ -479,12 +467,10 @@
 		-moz-transition: all 0.3s ease-out 0s;
 		-ms-transition: all 0.3s ease-out 0s;
 		-o-transition: all 0.3s ease-out 0s;
-		transition: all 0.3s ease-out 0s;
 		-moz-transform: scale(0.5);
 		-webkit-transform: scale(0.5);
 		-o-transform: scale(0.5);
 		-ms-transform: scale(0.5);
-		transform: scale(0.5);
 	}
 
 	.portfolio-wrapper .portfolio-content:hover .portfolio-overlay{
@@ -493,7 +479,6 @@
 		-webkit-transform: scale(1);
 		-o-transform: scale(1);
 		-ms-transform: scale(1);
-		transform: scale(1);
 	}
 
 	.portfolio-wrapper .portfolio-overlay a{
@@ -522,7 +507,6 @@
 		-moz-transition: all 0.2s ease-in-out;
 		-ms-transition: all 0.2s ease-in-out;
 		-o-transition: all 0.2s ease-in-out;
-		transition: all 0.2s ease-in-out;
 	}
 
 	.st-pricing:hover{
@@ -604,7 +588,6 @@
 		-moz-transition: 300ms;
 		-o-transition: 300ms;
 		-ms-transition: 300ms;
-		transition: 300ms;
 	}
 
 	.office-carousel-left {
@@ -671,12 +654,10 @@
 		-moz-transition: all 0.3s ease-out 0s;
 		-ms-transition: all 0.3s ease-out 0s;
 		-o-transition: all 0.3s ease-out 0s;
-		transition: all 0.3s ease-out 0s;
 		-moz-transform: scale(0.5);
 		-webkit-transform: scale(0.5);
 		-o-transform: scale(0.5);
 		-ms-transform: scale(0.5);
-		transform: scale(0.5);
 	}
 
 	.team-member:hover .member-social{
@@ -685,7 +666,6 @@
 		-webkit-transform: scale(1);
 		-o-transform: scale(1);
 		-ms-transform: scale(1);
-		transform: scale(1);
 	}
 
 	.team-member .member-social a{
@@ -856,7 +836,6 @@
 		-moz-transition: 300ms;
 		-o-transition: 300ms;
 		-ms-transition: 300ms;
-		transition: 300ms;
 	}
 
 	.post-carousel-left {
@@ -955,7 +934,6 @@
 		position: absolute;
 		right: 10px;
 		top: 50%;
-		transform: translateY(-50%);
 		-moz-transform: translateY(-50%);
 		-webkit-transform: translateY(-50%);
 	}
@@ -973,7 +951,6 @@
 		position: absolute;
 		right: 40px;
 		top: 50%;
-		transform: translateY(-50%);
 		-moz-transform: translateY(-50%);
 		-webkit-transform: translateY(-50%);
 		width: 1px;
@@ -1015,10 +992,10 @@
 /* 15. FOOTER */
 
 	#footer{
-		background-color: #262626;
+		background-color: #00CCCC;
 		padding-top: 40px;
 		padding-bottom: 40px;
-		color: rgba(255, 255, 255, 0.4);
+		color: white;
 	}
 
 	#footer a{

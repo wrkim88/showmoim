@@ -4,6 +4,7 @@
 <c:set var="root" value="${pageContext.request.contextPath}" />	
 <!-- Main CSS file -->
 <link rel="stylesheet" href="${root}/css/bootstrap.min.css" />
+<link rel="stylesheet" href="${root}/css/fileupload.css" />
 <link rel="stylesheet" href="${root}/css/owl.carousel.css" />
 <link rel="stylesheet" href="${root}/css/magnific-popup.css" />
 <link rel="stylesheet" href="${root}/css/font-awesome.css" />

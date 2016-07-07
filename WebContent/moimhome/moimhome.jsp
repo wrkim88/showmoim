@@ -12,6 +12,7 @@
 <br><br><br><br>
 <div align="center">
 모임 홈<br>
+${minfo.id}(${minfo.name})님 반갑습니다.<br><br>
 <a href="${root}/moim/moimmain.jsp">
 	<button type="button" class="btn btn-info btn-lg">kitri</button>
 </a>

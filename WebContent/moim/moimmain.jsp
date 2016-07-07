@@ -12,7 +12,7 @@
 <%@include file="/common/header.jsp"%>
 <br><br><br><br>
 
-<div style="width: 60%; height: 1000px;">
+<div style="width: 60%; height: 1000px;" align="center">
 	<div style="width: 15%; float: left;">
 		<div style="background-color: white; height: 200px;">
 			모임정보<br>
@@ -42,9 +42,8 @@
 	<div style="width: 15%; float: left;">기타</div>
 	
 </div>
-
+</center>
 <br><br><br>
 <%@include file="/common/footer.jsp"%>
-</center>
 </body>
 </html>
