@@ -8,12 +8,13 @@
 <%@include file="/common/common.jsp"%>
 </head>
 <body>
-<%@include file="/common/header.jsp"%><br><br><br>
+<%@include file="/common/header.jsp"%>
 
 
+<br><br><br><br>
 <div class="container-fluid" id="search_input_wrapper" align="center">
-	<input type="text" id="s_input" name="query" autocomplete="off" value="" placeholder="모임명을 입력해주세요." height="200" width="50" />
-	<button type="submit" id="s_button" value="검색"></button>
+	<input type="text" id="s_input" name="query" autocomplete="off" value="" placeholder="모임명을 입력해주세요." />
+	<a class="button" href="#" onclick="clicked()"><span id="buttonText">검색</span></a>
 </div>
 <div class="col-lg-3"></div>
 <b1>랜덤으로 추천 모임 뿌리기</b1>
