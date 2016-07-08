@@ -6,9 +6,7 @@ public class MemberDto {
 	private String name;
 	private String gender;
 	private String birth;
-	private String opicture;
-	private String spicture;
-	private String sfolder;
+	private String profile;
 	private String logon;
 	
 	public String getId() {
@@ -41,23 +39,11 @@ public class MemberDto {
 	public void setBirth(String birth) {
 		this.birth = birth;
 	}
-	public String getOpicture() {
-		return opicture;
+	public String getProfile() {
+		return profile;
 	}
-	public void setOpicture(String opicture) {
-		this.opicture = opicture;
-	}
-	public String getSpicture() {
-		return spicture;
-	}
-	public void setSpicture(String spicture) {
-		this.spicture = spicture;
-	}
-	public String getSfolder() {
-		return sfolder;
-	}
-	public void setSfolder(String sfolder) {
-		this.sfolder = sfolder;
+	public void setProfile(String profile) {
+		this.profile = profile;
 	}
 	public String getLogon() {
 		return logon;

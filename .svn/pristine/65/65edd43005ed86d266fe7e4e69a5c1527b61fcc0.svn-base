@@ -8,18 +8,15 @@
 <%@include file="/common/common.jsp"%>
 </head>
 <body>
+<center>
 <%@include file="/common/header.jsp"%>
 <br><br><br><br>
 
-<div align="center">
-	
-<div style="width: 60%; height: 1000px;">
+<div style="width: 60%; height: 1000px;" align="center">
 	<div style="width: 15%; float: left;">
 		<div style="background-color: white; height: 200px;">
 			모임정보<br>
-			${mminfo.mname}<br>
-			${mminfo.category}<br>
-			${mminfo.intro}<br><br>
+			kitri smart platform 18th<br><br>
 			<img src="${root}/images/kitri.png">
 		</div>
 		<button type="submit" class="btn btn-success">가입하기</button>
@@ -44,9 +41,8 @@
 	<div style="width: 5%; float: left;">&nbsp;</div>
 	<div style="width: 15%; float: left;">기타</div>
 	
-</div>	
-	
 </div>
+</center>
 <br><br><br>
 <%@include file="/common/footer.jsp"%>
 </body>

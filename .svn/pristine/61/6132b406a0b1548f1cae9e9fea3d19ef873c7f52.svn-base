@@ -6,11 +6,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	
 	<typeAliases>
 		<typeAlias alias="mdto" type="com.showmoim.model.MemberDto"/>
-		<typeAlias alias="modto" type="com.showmoim.model.MoimDto"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="com/showmoim/config/mybatis/member.xml"/>
-		<mapper resource="com/showmoim/config/mybatis/moim.xml"/>
 	</mappers>
 </configuration>

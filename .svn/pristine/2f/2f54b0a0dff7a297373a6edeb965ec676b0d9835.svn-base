@@ -1,8 +1,5 @@
 package com.showmoim.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,13 +18,10 @@ public class MemberController {
 	}
 
 	@RequestMapping("/login.show")
-	public ModelAndView login(@RequestParam("id")String id, @RequestParam("pass")String pass, HttpServletRequest request){
+	public ModelAndView login(@RequestParam("id")String id, @RequestParam("pass")String pass){
 		MemberDto md = memberService.Login(id, pass);
-		
-		HttpSession session = request.getSession();
-		session.setAttribute("minfo", md);
-		
 		ModelAndView mav = new ModelAndView();
+		mav.addObject("minfo", md);
 		mav.setViewName("/moimhome/moimhome");
 		return mav;
 	}
