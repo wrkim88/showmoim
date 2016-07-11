@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
 
 	<bean id="ds" class="org.springframework.jndi.JndiObjectFactoryBean">
 		<property name="jndiName" value="java:comp/env/jdbc/showmoim"></property>
@@ -21,7 +23,15 @@
 	</bean>
 	
 	<bean id="mservice" class="com.showmoim.service.MemberService">
-		<property name="memberDao" ref="mdao"></property>
+		<property name="memberDao" ref="mdao"/>
 	</bean>
-
+	
+	<bean id="mmdao" class="com.showmoim.model.MoimMemberDao">
+		<property name="sqlSession" ref="sst"/>
+	</bean>
+	
+	<bean id="mmservice" class="com.showmoim.service.MoimMemberService">
+		<property name="moimMemberDao" ref="mmdao"/>
+	</bean>
+	
 </beans>

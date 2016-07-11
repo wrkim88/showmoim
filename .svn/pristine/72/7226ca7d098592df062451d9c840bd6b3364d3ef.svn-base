@@ -1,7 +1,5 @@
 package com.showmoim.model;
 
-import org.springframework.web.multipart.MultipartFile;
-
 public class MoimDto {
 	private int mid;
 	private String mname;
@@ -12,15 +10,6 @@ public class MoimDto {
 	private String mspicture;
 	private String msfolder;
 	private String intro;
-	
-//	private MultipartFile uploadfile;
-//	
-//	public MultipartFile getUploadfile() {
-//		return uploadfile;
-//	}
-//	public void setUploadfile(MultipartFile uploadfile) {
-//		this.uploadfile = uploadfile;
-//	}
 	
 	public int getMid() {
 		return mid;

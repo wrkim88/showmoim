@@ -19,8 +19,8 @@ public class MoimService {
 		return moimDao.Create(moimDto);
 	}
 	
-	public MoimDto MyMoim(String mid){
-		return moimDao.MyMoim(mid);
+	public MoimDto MyMoim(){
+		return moimDao.MyMoim();
 	}
 
 }

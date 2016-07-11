@@ -16,7 +16,7 @@ public class MoimDao {
 		return sqlSession.insert("com.showmoim.model.MoimDao.create", moimDto);
 	}
 	
-	public MoimDto MyMoim(String mid){
-		return sqlSession.selectOne("com.showmoim.model.MoimDao.mymoim", mid);
+	public MoimDto MyMoim(){
+		return sqlSession.selectOne("com.showmoim.model.MoimDao.mymoim");
 	}
 }

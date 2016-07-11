@@ -1,9 +1,16 @@
 package com.showmoim.controller;
 
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.showmoim.model.MoimDto;
@@ -20,7 +27,31 @@ public class MoimController {
 	}
 
 	@RequestMapping("/create.show")
-	public ModelAndView create(MoimDto moimDto){
+	public ModelAndView create(MoimDto moimDto, @RequestParam(value = "input-file") MultipartFile multipart){
+		
+		if (!multipart.isEmpty()) {
+			String orign_file = multipart.getOriginalFilename();
+
+			SimpleDateFormat sdf = new SimpleDateFormat("yyMMdd");
+			String today = sdf.format(new Date());
+			String uploadDir = "C:\\javadata\\workspace\\framework\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp1\\wtpwebapps\\showmoim\\upload" + File.separator + today;
+			File updir = new File(uploadDir);
+			if (!updir.exists()) {
+				updir.mkdirs();
+			}
+			String save_file = System.nanoTime() + orign_file.substring(orign_file.lastIndexOf("."));
+			try {
+				multipart.transferTo(new File(uploadDir, save_file));
+			} catch (IllegalStateException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			moimDto.setMopicture(orign_file);
+			moimDto.setMspicture(save_file);
+			moimDto.setMsfolder(today);
+		}
+		
 		int s = moimService.Create(moimDto);
 		
 		ModelAndView mav = new ModelAndView();
@@ -29,8 +60,8 @@ public class MoimController {
 	}
 	
 	@RequestMapping("/mymoim.show")
-	public ModelAndView mymoim(){
-		MoimDto md = moimService.MyMoim();
+	public ModelAndView mymoim(String mid){
+		MoimDto md = moimService.MyMoim(mid);
 		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("mminfo", md);

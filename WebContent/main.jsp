@@ -11,7 +11,7 @@
 <div align="center">
 <img src="${root}/images/logo.png"><br><br>
 메인입니다.<br>
-<form method="get" action="${root}/member/login.show">
+<form method="post" action="${root}/member/login.show">
 <input type="text" name="id" placeholder="아이디"><br>
 <input type="text" name="pass" placeholder="비밀번호"><br><br>
 <button type="submit" class="btn btn-info btn-lg">로그인</button>

@@ -20,12 +20,9 @@ ${minfo.id}(${minfo.name})님 반갑습니다.<br><br>
 </div>
 <div style="background-color: white">
 내 모임<br><br>
-<c:forEach var="m" items="${mmlist}">
-<form id="mmform" method="post" action="${root}/moim/mymoim.show">
-<input type="hidden" id="mid" name="mid" value="${m.mid}">
-	<button type="submit" class="btn btn-info btn-lg">${m.mid}</button>
-</form>
-</c:forEach>
+<a href="${root}/moim/mymoim.show">
+	<button type="button" class="btn btn-info btn-lg">kitri</button>
+</a>
 <br>
 </div>
 </div>

@@ -8,4 +8,11 @@
         from member 
         where id=#{id} and pass=#{pass} 
     </select>
+    
+    <select id="mmlist" parameterType="String" resultType="mmdto">
+        select *
+        from moimmember 
+        where id=#{id}
+    </select>
+    
 </mapper>
