@@ -1,6 +1,5 @@
 package com.showmoim.controller;
 
-
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -28,20 +27,23 @@ import com.showmoim.service.MoimService;
 @SessionAttributes("/minfo")
 public class MoimController {
 	MoimService moimService;
-	
+
 	public void setMoimService(MoimService moimService) {
 		this.moimService = moimService;
 	}
 
 	@RequestMapping("/create.show")
-	public ModelAndView create(MoimDto moimDto, @RequestParam(value = "input-file") MultipartFile multipart, HttpSession session){
+	public ModelAndView create(MoimDto moimDto, @RequestParam(value = "input-file") MultipartFile multipart, 
+			HttpSession session, HttpServletRequest request){
 		
 		if (!multipart.isEmpty()) {
 			String orign_file = multipart.getOriginalFilename();
-
+			String realPath = request.getSession().getServletContext().getRealPath("upload");
+			
 			SimpleDateFormat sdf = new SimpleDateFormat("yyMMdd");
 			String today = sdf.format(new Date());
-			String uploadDir = "C:\\javadata\\workspace\\framework\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp1\\wtpwebapps\\showmoim\\upload" + File.separator + today;
+			
+			String uploadDir = realPath + File.separator + today;
 			File updir = new File(uploadDir);
 			if (!updir.exists()) {
 				updir.mkdirs();
@@ -57,6 +59,7 @@ public class MoimController {
 			moimDto.setMopicture(orign_file);
 			moimDto.setMspicture(save_file);
 			moimDto.setMsfolder(today);
+			
 		}
 		
 		int c = moimService.Create(moimDto);
@@ -66,31 +69,34 @@ public class MoimController {
 		List<MoimDto> mmlist = moimService.MyMoimList(memberDto.getId());
 		session.setAttribute("mmlist", mmlist);
 		
+		int mmc = moimService.MyMoimCount(memberDto.getId());
+		session.setAttribute("mmc", mmc);
+		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("/moimhome/moimhome");
 		return mav;
 	}
-	
+
 	@RequestMapping("/mymoim.show")
-	public ModelAndView mymoim(String mid){
+	public ModelAndView mymoim(String mid) {
 		MoimDto md = moimService.MyMoim(mid);
-		
+
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("mminfo", md);
 		mav.setViewName("/moim/moimmain");
 		return mav;
 	}
-	
+
 	@RequestMapping("/moimsearch.show")
-	public ModelAndView moimsearch(){
+	public ModelAndView moimsearch() {
 		List<MoimDto> mlist = moimService.MoimSearch();
 		int mc = moimService.MoimCount();
-		
+
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("mlist", mlist);
 		mav.addObject("mc", mc);
 		mav.setViewName("/moimsearch/moimsearch");
 		return mav;
 	}
-	
+
 }

@@ -30,16 +30,15 @@ public class MemberController {
 	
 	@RequestMapping("/login.show")
 	public ModelAndView login(@RequestParam("id") String id, @RequestParam("pass") String pass,
-			HttpServletRequest request) {
+			HttpSession session) {
 		MemberDto md = memberService.Login(id, pass);
-
-		HttpSession session = request.getSession();
 		session.setAttribute("minfo", md);
 		
 		List<MoimDto> mmlist = moimService.MyMoimList(id);
 		session.setAttribute("mmlist", mmlist);
 
 		int mmc = moimService.MyMoimCount(id);
+		session.setAttribute("mmc", mmc);
 		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("mmc",mmc);
@@ -51,6 +50,7 @@ public class MemberController {
 	public ModelAndView logout(HttpSession session){
 		session.removeAttribute("minfo");
 		session.removeAttribute("mmlist");
+		session.removeAttribute("mmc");
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("/main");
