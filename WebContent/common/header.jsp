@@ -20,20 +20,30 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="logo" href="${root}/main.jsp"><img src="${root}/images/logo.png"
-					alt=""></a>
+				<img src="${root}/images/logo.png" style="width: 200px; height: 50px;">
 			</div>
 
 			<div class="collapse navbar-collapse" id="st-navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li><img src="${root}/images/blank.png"></li>
-					<li><a href="${root}/moimhome/moimhome.jsp">모임 홈</a></li>
-					<li><a href="${root}/moimsearch/search.jsp">모임 찾기</a></li>
-					<li><a href="${root}/setting/settingpage.jsp">설정</a></li>
+					<li><a href="${root}/moimhome/moimhome.jsp">
+					<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+					모임 홈</a></li>
+					<li><a href="${root}/moim/moimsearch.show">
+					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+					모임 찾기</a></li>
+					<li><a href="${root}/info/info.jsp">
+					<span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+					더보기</a></li>
 					
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><img src="${root}/images/login.png" class="img-circle" width="50" height="50"></li>
+					<li><form method="post" action="${root}/info/info.jsp">
+					<input type="image" src="${root}/images/login.png" value="submit" class="img-circle" width="50" height="50">
+					</form></li>
+					<li><a href="${root}/member/logout.show">
+					<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+					로그아웃</a></li>
 					<li><img src="${root}/images/blank.png"></li>
 				</ul>
 			</div>

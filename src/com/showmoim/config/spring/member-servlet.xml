@@ -7,7 +7,7 @@
 
 	<bean id="mcontrol" class="com.showmoim.controller.MemberController">
 		<property name="memberService" ref="mservice"/>
-		<property name="moimMemberService" ref="mmservice"/>
+		<property name="moimService" ref="moservice"/>
 	</bean>
 	
 	<bean id="irvr" class="org.springframework.web.servlet.view.InternalResourceViewResolver">

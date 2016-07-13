@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+	<typeAliases>
+		<typeAlias alias="mdto" type="com.showmoim.model.MemberDto"/>
+		<typeAlias alias="mmdto" type="com.showmoim.model.MoimMemberDto"/>
+		<typeAlias alias="modto" type="com.showmoim.model.MoimDto"/>
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="com/showmoim/config/mybatis/member.xml"/>
+		<mapper resource="com/showmoim/config/mybatis/moim.xml"/>
+	</mappers>
+</configuration>

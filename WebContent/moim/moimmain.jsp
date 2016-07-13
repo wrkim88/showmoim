@@ -15,14 +15,17 @@
 	
 <div style="width: 60%; height: 1000px;">
 	<div style="width: 20%; float: left;">
-		<div style="background-color: white; height: 300px;">
-			<h2>모임정보</h2><br>
-			${mminfo.mname}<br>
-			${mminfo.category}<br>
+		<div style="background-color: white; height: 400px;">
+			<h3>${mminfo.mname}</h3><br>
+			<img src="${root}/upload/${mminfo.msfolder}/${mminfo.mspicture}" style="width: 100px; height: 100px;"><br><br>
+			${mminfo.category}<br><br>
 			${mminfo.intro}<br><br>
-			<img src="${root}/upload/${mminfo.msfolder}/${mminfo.mspicture}" style="width: 100px; height: 100px;">
+			1/${mminfo.maxmember}<br><br>
+			since ${mminfo.createdate}<br><br>
 		</div>
-		<button type="submit" class="btn btn-success">가입하기</button>
+		<button type="submit" class="btn btn-success">
+		<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+		가입하기</button>
 	</div>
 	
 	<div style="width: 5%; float: left;">&nbsp;</div>

@@ -16,7 +16,4 @@ public class MoimMemberService {
 		this.moimMemberDao = moimMemberDao;
 	}
 
-	public List<MoimMemberDto> mmlist(String id){
-		return moimMemberDao.mmlist(id);
-	}
 }

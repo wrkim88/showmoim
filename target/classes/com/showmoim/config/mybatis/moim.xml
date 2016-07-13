@@ -8,9 +8,44 @@
         values (moim_seq.nextval, #{mname}, #{category}, #{maxmember}, sysdate, #{intro}, #{mopicture}, #{mspicture}, #{msfolder})
     </update>
     
+    <update id="insertmoimmember" parameterType="String">
+        insert into moimmember (id, mid, grade, nick)
+        values (#{id}, moim_seq.currval, 0, 'master')
+    </update>
+    
     <select id="mymoim" parameterType="String" resultType="modto">
         select *
         from moim
         where mid=#{mid}
     </select>
+    
+    <select id="mymoimlist" parameterType="String" resultType="modto">
+        select *
+        from moim
+        where mid in 
+            (
+            select mid
+            from moimmember
+            where id=#{id}
+            )
+        order by mid
+    </select>
+    
+    <select id="mymoimcount" parameterType="String" resultType="int">
+        select count(mid)
+        from moimmember
+        where id=#{id}
+    </select>
+    
+    <select id="moimsearch" resultType="modto">
+        select *
+        from moim
+        order by mid
+    </select>
+    
+    <select id="moimcount" resultType="int">
+        select count(mid)
+        from moim
+    </select>
+    
 </mapper>

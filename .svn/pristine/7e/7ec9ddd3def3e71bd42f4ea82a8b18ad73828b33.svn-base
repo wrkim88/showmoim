@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.showmoim.model.MoimDao">
+    <update id="create" parameterType="modto">
+        insert into moim (mid, mname, category, maxmember, createdate, intro, mopicture, mspicture, msfolder)
+        values (moim_seq.nextval, #{mname}, #{category}, #{maxmember}, sysdate, #{intro}, #{mopicture}, #{mspicture}, #{msfolder})
+    </update>
+    
+    <select id="mymoim" parameterType="String" resultType="modto">
+        select *
+        from moim
+        where mid=#{mid}
+    </select>
+</mapper>

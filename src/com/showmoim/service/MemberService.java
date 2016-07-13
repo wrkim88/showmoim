@@ -23,5 +23,6 @@ public class MemberService {
 		map.put("id", id);
 		map.put("pass", pass);
 		return memberDao.Login(map);
-	};
+	}
+	
 }

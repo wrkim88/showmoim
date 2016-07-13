@@ -11,17 +11,8 @@
 <link rel="stylesheet" href="${root}/css/style.css" />
 <link rel="stylesheet" href="${root}/css/responsive.css" />
 
-
 <!-- Favicon -->
-<link rel="shortcut icon" href="${root}/images/icon/favicon.png">
-<link rel="apple-touch-icon-precomposed" sizes="144x144"
-	href="${root}/images/icon/apple-touch-icon-144-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114"
-	href="${root}/images/icon/apple-touch-icon-114-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72"
-	href="${root}/images/icon/apple-touch-icon-72-precomposed.png">
-<link rel="apple-touch-icon-precomposed"
-	href="${root}/images/icon/apple-touch-icon-57-precomposed.png">
+<link rel="shortcut icon" href="${root}/images/favicon.png">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

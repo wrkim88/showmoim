@@ -26,12 +26,12 @@
 		<property name="memberDao" ref="mdao"/>
 	</bean>
 	
-	<bean id="mmdao" class="com.showmoim.model.MoimMemberDao">
+	<bean id="modao" class="com.showmoim.model.MoimDao">
 		<property name="sqlSession" ref="sst"/>
 	</bean>
 	
-	<bean id="mmservice" class="com.showmoim.service.MoimMemberService">
-		<property name="moimMemberDao" ref="mmdao"/>
+	<bean id="moservice" class="com.showmoim.service.MoimService">
+		<property name="moimDao" ref="mmdao"/>
 	</bean>
 	
 </beans>

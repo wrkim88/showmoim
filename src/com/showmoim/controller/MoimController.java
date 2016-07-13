@@ -5,20 +5,27 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.showmoim.model.MemberDto;
 import com.showmoim.model.MoimDto;
 import com.showmoim.model.MoimMemberDto;
 import com.showmoim.service.MoimService;
 
 @Controller
 @RequestMapping("/moim")
+@SessionAttributes("/minfo")
 public class MoimController {
 	MoimService moimService;
 	
@@ -27,7 +34,7 @@ public class MoimController {
 	}
 
 	@RequestMapping("/create.show")
-	public ModelAndView create(MoimDto moimDto, @RequestParam(value = "input-file") MultipartFile multipart){
+	public ModelAndView create(MoimDto moimDto, @RequestParam(value = "input-file") MultipartFile multipart, HttpSession session){
 		
 		if (!multipart.isEmpty()) {
 			String orign_file = multipart.getOriginalFilename();
@@ -52,7 +59,12 @@ public class MoimController {
 			moimDto.setMsfolder(today);
 		}
 		
-		int s = moimService.Create(moimDto);
+		int c = moimService.Create(moimDto);
+		MemberDto memberDto = (MemberDto) session.getAttribute("minfo");
+		int i = moimService.InsertMoimMember(memberDto.getId());
+		
+		List<MoimDto> mmlist = moimService.MyMoimList(memberDto.getId());
+		session.setAttribute("mmlist", mmlist);
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("/moimhome/moimhome");
@@ -66,6 +78,18 @@ public class MoimController {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("mminfo", md);
 		mav.setViewName("/moim/moimmain");
+		return mav;
+	}
+	
+	@RequestMapping("/moimsearch.show")
+	public ModelAndView moimsearch(){
+		List<MoimDto> mlist = moimService.MoimSearch();
+		int mc = moimService.MoimCount();
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("mlist", mlist);
+		mav.addObject("mc", mc);
+		mav.setViewName("/moimsearch/moimsearch");
 		return mav;
 	}
 	

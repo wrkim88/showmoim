@@ -8,14 +8,17 @@
 <%@include file="/common/common.jsp" %>
 </head>
 <body>
-<center>
 <%@include file="/common/header.jsp" %>
 <br><br><br><br>
 <div align="center">
-설정 페이지
+<h3>내 정보</h3><br>
+<img src="${root}/images/login.png" class="img-circle" width="100" height="100"><br><br>
+${minfo.id}<br>
+${minfo.name}<br>
+${minfo.gender}<br>
+${minfo.birth}<br>
 </div>
 <br><br><br>
 <%@include file="/common/footer.jsp" %>
-</center>
 </body>
 </html>
