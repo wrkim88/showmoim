@@ -67,7 +67,7 @@ $(document).ready(function(){
 <div class="filebox preview-image">
   <input class="upload-name" value="파일선택" disabled="disabled" >
   <label for="input-file">모임 사진</label> 
-  <input type="file" id="input-file" name="input-file" class="upload-hidden" accept="image/*"> 
+  <input type="file" id="input-file" name="input-file" class="upload-hidden"> 
 </div>
 
 <input type="text" id="category" name="category" placeholder="카테고리" style="width: 350px;" required="required"><br>

@@ -48,11 +48,4 @@
         from moim
     </select>
     
-    <select id="search" parameterType="String" resultType="modto">
-        select *
-        from moim
-        where mname like '%'||#{sword}||'%'
-        order by mid
-    </select>
-    
 </mapper>

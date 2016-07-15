@@ -41,8 +41,4 @@ public class MoimDao {
 	public int MoimCount(){
 		return sqlSession.selectOne("com.showmoim.model.MoimDao.moimcount");
 	}
-	
-	public List<MoimDto> Search(String sword){
-		return sqlSession.selectList("com.showmoim.model.MoimDao.search", sword);
-	}
 }

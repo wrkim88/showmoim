@@ -31,26 +31,19 @@ public class MemberController {
 	@RequestMapping("/login.show")
 	public ModelAndView login(@RequestParam("id") String id, @RequestParam("pass") String pass,
 			HttpSession session) {
-		ModelAndView mav = new ModelAndView();
 		MemberDto md = memberService.Login(id, pass);
-		if (md != null) {
-			session.setAttribute("minfo", md);
-			
-			List<MoimDto> mmlist = moimService.MyMoimList(id);
-			session.setAttribute("mmlist", mmlist);
-	
-			int mmc = moimService.MyMoimCount(id);
-			session.setAttribute("mmc", mmc);
-			
-			mav.addObject("mmc", mmc);
-			mav.setViewName("/moimhome/moimhome");
-			return mav;
-		} else {
-			String fail = "아이디 or 비밀번호 확인";
-			mav.addObject("loginfail", fail);
-			mav.setViewName("/main");
-			return mav;
-		}
+		session.setAttribute("minfo", md);
+		
+		List<MoimDto> mmlist = moimService.MyMoimList(id);
+		session.setAttribute("mmlist", mmlist);
+
+		int mmc = moimService.MyMoimCount(id);
+		session.setAttribute("mmc", mmc);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("mmc",mmc);
+		mav.setViewName("/moimhome/moimhome");
+		return mav;
 	}
 	
 	@RequestMapping("/logout.show")

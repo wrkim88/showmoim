@@ -44,9 +44,5 @@ public class MoimService {
 	public int MoimCount(){
 		return moimDao.MoimCount();
 	}
-	
-	public List<MoimDto> Search(String sword){
-		return moimDao.Search(sword);
-	}
 
 }

@@ -21,9 +21,6 @@
 	  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
-<script type="text/javascript">
-var root = "${root}";
-</script>
 <!-- JS -->
 <script type="text/javascript" src="${root}/js/jquery.min.js"></script>
 <!-- jQuery -->
