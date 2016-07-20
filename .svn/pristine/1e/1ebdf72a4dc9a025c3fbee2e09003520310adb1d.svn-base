@@ -14,16 +14,16 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.showmoim.model.MemberDto;
-import com.showmoim.model.MemberListDto;
 import com.showmoim.model.MoimDto;
 import com.showmoim.model.MoimMemberDto;
-import com.showmoim.service.MoimMemberService;
 import com.showmoim.service.MoimService;
 
 @Controller
@@ -31,15 +31,11 @@ import com.showmoim.service.MoimService;
 @SessionAttributes("/minfo")
 public class MoimController {
 	MoimService moimService;
-	MoimMemberService moimMemberService;
 
 	public void setMoimService(MoimService moimService) {
 		this.moimService = moimService;
 	}
-	public void setMoimMemberService(MoimMemberService moimMemberService) {
-		this.moimMemberService = moimMemberService;
-	}
-	
+
 	@RequestMapping("/create.show")
 	public ModelAndView create(MoimDto moimDto, @RequestParam(value = "input-file") MultipartFile multipart, 
 			HttpSession session, HttpServletRequest request){
@@ -86,20 +82,11 @@ public class MoimController {
 	}
 
 	@RequestMapping("/mymoim.show")
-	public ModelAndView mymoim(MoimMemberDto moimMemberDto) {
-		String mid = moimMemberDto.getMid()+"";
+	public ModelAndView mymoim(String mid) {
 		MoimDto md = moimService.MyMoim(mid);
-		
-		MoimMemberDto mmd = moimMemberService.MoimCheck(moimMemberDto);
-		
-		List<MemberListDto> moimmemberlist = moimMemberService.MoimMemberList(mid);
-		int moimmembercount = moimMemberService.MoimMemberCount(mid);
 
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("mminfo", md);
-		mav.addObject("moimcheck", mmd);
-		mav.addObject("moimmemberlist", moimmemberlist);
-		mav.addObject("moimmembercount", moimmembercount);
 		mav.setViewName("/moim/moimmain");
 		return mav;
 	}
@@ -139,5 +126,5 @@ public class MoimController {
 		}
 
 	}
-	
+
 }

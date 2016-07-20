@@ -23,5 +23,13 @@
 	<bean id="moservice" class="com.showmoim.service.MoimService">
 		<property name="moimDao" ref="modao"></property>
 	</bean>
+	
+	<bean id="momdao" class="com.showmoim.model.MoimMemberDao">
+		<property name="sqlSession" ref="sst"/>
+	</bean>
+	
+	<bean id="momservice" class="com.showmoim.service.MoimMemberService">
+		<property name="moimMemberDao" ref="momdao"></property>
+	</bean>
 
 </beans>

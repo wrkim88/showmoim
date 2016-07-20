@@ -45,5 +45,4 @@ public class MoimDao {
 	public List<MoimDto> Search(String sword){
 		return sqlSession.selectList("com.showmoim.model.MoimDao.search", sword);
 	}
-	
 }

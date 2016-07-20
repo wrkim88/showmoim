@@ -39,7 +39,14 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><form method="post" action="${root}/info/info.jsp">
-					<input type="image" src="${root}/images/login.png" value="submit" class="img-circle" width="50" height="50">
+					<c:choose>
+					<c:when test="${minfo.spicture eq null}">
+						<img src="${root}/images/login.png" class="img-circle" width="50" height="50">
+					</c:when>
+					<c:when test="${minfo.spicture ne null}">
+						<img src="${root}/upload/${minfo.sfolder}/${minfo.spicture}" class="img-circle" width="50" height="50">
+					</c:when>
+					</c:choose>
 					</form></li>
 					<li><a href="${root}/member/logout.show">
 					<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>

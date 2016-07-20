@@ -21,6 +21,7 @@
 <div style="width: 50%;" align="center">
 <c:forEach var="m" items="${mmlist}">
 <form id="mmform" method="post" action="${root}/moim/mymoim.show">
+<input type="hidden" id="id" name="id" value="${minfo.id}">
 <input type="hidden" id="mid" name="mid" value="${m.mid}">
 <div style="background-color: white; width: 200px; height: 200px; float: left; margin: 50px 50px;">
 	<input type="image" src="${root}/upload/${m.msfolder}/${m.mspicture}" value="submit" style="width: 100px; height: 100px;">

@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.showmoim.model.MemberDto;
 import com.showmoim.model.MoimDao;
 import com.showmoim.model.MoimDto;
 import com.showmoim.model.MoimMemberDto;
@@ -49,5 +48,5 @@ public class MoimService {
 	public List<MoimDto> Search(String sword){
 		return moimDao.Search(sword);
 	}
-	
+
 }

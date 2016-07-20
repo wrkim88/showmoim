@@ -17,4 +17,12 @@ public class MemberDao {
 	public MemberDto Login(Map<String, String> map){
 		return sqlSession.selectOne("com.showmoim.model.MemberDao.login", map);
 	}
+	
+	public int Join(MemberDto memberDto){
+		return sqlSession.insert("com.showmoim.model.MemberDao.join", memberDto);
+	}
+	
+	public int Info(MemberDto memberDto){
+		return sqlSession.insert("com.showmoim.model.MemberDao.info", memberDto);
+	}
 }

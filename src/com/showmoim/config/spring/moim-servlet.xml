@@ -5,6 +5,12 @@
 
 	<bean id="mocontrol" class="com.showmoim.controller.MoimController">
 		<property name="moimService" ref="moservice"></property>
+		<property name="moimMemberService" ref="momservice"></property>
+	</bean>
+	
+	<bean id="momcontrol" class="com.showmoim.controller.MoimMemberController">
+		<property name="moimService" ref="moservice"></property>
+		<property name="moimMemberService" ref="momservice"></property>
 	</bean>
 	
 	<bean id="irvr" class="org.springframework.web.servlet.view.InternalResourceViewResolver">

@@ -9,4 +9,14 @@
         where id=#{id} and pass=#{pass} 
     </select>
     
+    <update id="join" parameterType="mdto">
+        insert into member(id, pass, name)
+        values (#{id}, #{pass}, #{name})
+    </update>
+    
+    <update id="info" parameterType="mdto">
+        update member
+        set pass=#{pass}, name=#{name}, gender=#{gender}, birth=#{birth}, opicture=#{opicture}, spicture=#{spicture}, sfolder=#{sfolder}
+        where id=#{id}
+    </update>
 </mapper>

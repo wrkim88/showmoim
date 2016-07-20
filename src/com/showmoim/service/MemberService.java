@@ -3,7 +3,6 @@ package com.showmoim.service;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.showmoim.model.MemberDao;
@@ -23,6 +22,14 @@ public class MemberService {
 		map.put("id", id);
 		map.put("pass", pass);
 		return memberDao.Login(map);
+	}
+	
+	public int Join(MemberDto memberDto){
+		return memberDao.Join(memberDto);
+	}
+	
+	public int Info(MemberDto memberDto){
+		return memberDao.Info(memberDto);
 	}
 	
 }
