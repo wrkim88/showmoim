@@ -8,7 +8,7 @@
         values (#{id}, #{mid}, #{grade}, #{nick})
     </update>
     
-    <select id="moimcheck" parameterType="mmdto" resultType="mmdto">
+    <select id="moimcheck" parameterType="java.util.Map" resultType="mmdto">
         select *
         from moimmember
         where id=#{id}

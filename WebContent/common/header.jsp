@@ -40,7 +40,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li><form method="post" action="${root}/info/info.jsp">
 					<c:choose>
-					<c:when test="${minfo.spicture eq null}">
+					<c:when test="${(minfo.spicture eq null) || (minfo.spicture == ' ')}">
 						<img src="${root}/images/login.png" class="img-circle" width="50" height="50">
 					</c:when>
 					<c:when test="${minfo.spicture ne null}">

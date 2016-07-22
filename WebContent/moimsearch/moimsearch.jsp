@@ -23,6 +23,7 @@ function msearch(){
         	ml.innerHTML = '<br><h2>검색 된 모임('+len+')</h2><br>';
         	for(var i = 0; i<len ; i++){
         		var inStr = '<form id="mmform" method="post" action="'+root+'/moim/mymoim.show">';
+        		inStr += '<input type="hidden" id="id" name="id" value="wrkim">';
         		inStr += '<input type="hidden" id="mid" name="mid" value="'+data[i].mid+'">';
         		inStr += '<div style="background-color: white; width: 200px; height: 200px; float: left; margin: 50px 50px;">';
         		inStr += '<input type="image" src="'+root+'/upload/'+data[i].msfolder+'/'+data[i].mspicture+'" value="submit" style="width: 100px; height: 100px;">';

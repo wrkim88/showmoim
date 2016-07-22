@@ -6,6 +6,7 @@
 	<bean id="mocontrol" class="com.showmoim.controller.MoimController">
 		<property name="moimService" ref="moservice"></property>
 		<property name="moimMemberService" ref="momservice"></property>
+		<property name="boardService" ref="bservice"></property>
 	</bean>
 	
 	<bean id="momcontrol" class="com.showmoim.controller.MoimMemberController">

@@ -1,6 +1,8 @@
 package com.showmoim.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -21,8 +23,11 @@ public class MoimMemberService {
 		return moimMemberDao.MoimJoin(moimMemberDto);
 	}
 	
-	public MoimMemberDto MoimCheck(MoimMemberDto moimMemberDto){
-		return moimMemberDao.MoimCheck(moimMemberDto);
+	public MoimMemberDto MoimCheck(String id, String mid){
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("id", id);
+		map.put("mid", mid);
+		return moimMemberDao.MoimCheck(map);
 	}
 	
 	public int MoimMemberCount(String mid){

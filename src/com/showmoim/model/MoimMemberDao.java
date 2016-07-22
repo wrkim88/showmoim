@@ -1,6 +1,7 @@
 package com.showmoim.model;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -16,8 +17,8 @@ SqlSession sqlSession;
 		return sqlSession.insert("com.showmoim.model.MoimMemberDao.moimjoin", moimMemberDto);
 	}
 	
-	public MoimMemberDto MoimCheck(MoimMemberDto moimMemberDto){
-		return sqlSession.selectOne("com.showmoim.model.MoimMemberDao.moimcheck", moimMemberDto);
+	public MoimMemberDto MoimCheck(Map<String, String> map){
+		return sqlSession.selectOne("com.showmoim.model.MoimMemberDao.moimcheck", map);
 	}
 	
 	public int MoimMemberCount(String mid){

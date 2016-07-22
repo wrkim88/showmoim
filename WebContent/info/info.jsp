@@ -18,7 +18,7 @@
 <label style="font-size: large;"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;${minfo.id}</label><br><br>
 
 <c:choose>
-<c:when test="${minfo.spicture eq null}">
+<c:when test="${(minfo.spicture eq null) || (minfo.spicture == ' ')}">
 	<img src="${root}/images/login.png" class="img-circle" width="100" height="100">
 </c:when>
 <c:when test="${minfo.spicture ne null}">

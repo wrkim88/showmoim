@@ -34,14 +34,6 @@ public class MoimMemberController {
 	public ModelAndView moimjoin(MoimMemberDto moimMemberDto, HttpSession session){
 		moimMemberService.MoimJoin(moimMemberDto);
 		
-		String mid = moimMemberDto.getMid()+"";
-		MoimDto md = moimService.MyMoim(mid);
-		
-		MoimMemberDto mmd = moimMemberService.MoimCheck(moimMemberDto);
-		
-		List<MemberListDto> moimmemberlist = moimMemberService.MoimMemberList(mid);
-		int moimmembercount = moimMemberService.MoimMemberCount(mid);
-		
 		List<MoimDto> mmlist = moimService.MyMoimList(moimMemberDto.getId());
 		session.setAttribute("mmlist", mmlist);
 
@@ -49,10 +41,6 @@ public class MoimMemberController {
 		session.setAttribute("mmc", mmc);
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("mminfo", md);
-		mav.addObject("moimcheck", mmd);
-		mav.addObject("moimmemberlist", moimmemberlist);
-		mav.addObject("moimmembercount", moimmembercount);
 		mav.setViewName("/moim/moimmain");
 		return mav;
 	}

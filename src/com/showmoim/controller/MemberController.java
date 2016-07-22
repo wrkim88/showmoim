@@ -108,6 +108,10 @@ public class MemberController {
 			memberDto.setSpicture(save_file);
 			memberDto.setSfolder(today);
 			
+		} else {
+			memberDto.setOpicture(" ");
+			memberDto.setSpicture(" ");
+			memberDto.setSfolder(" ");
 		}
 		
 		memberService.Info(memberDto);

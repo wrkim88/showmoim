@@ -19,10 +19,12 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.showmoim.model.BoardDto;
 import com.showmoim.model.MemberDto;
 import com.showmoim.model.MemberListDto;
 import com.showmoim.model.MoimDto;
 import com.showmoim.model.MoimMemberDto;
+import com.showmoim.service.BoardService;
 import com.showmoim.service.MoimMemberService;
 import com.showmoim.service.MoimService;
 
@@ -32,12 +34,16 @@ import com.showmoim.service.MoimService;
 public class MoimController {
 	MoimService moimService;
 	MoimMemberService moimMemberService;
+	BoardService boardService;
 
 	public void setMoimService(MoimService moimService) {
 		this.moimService = moimService;
 	}
 	public void setMoimMemberService(MoimMemberService moimMemberService) {
 		this.moimMemberService = moimMemberService;
+	}
+	public void setBoardService(BoardService boardService) {
+		this.boardService = boardService;
 	}
 	
 	@RequestMapping("/create.show")
@@ -86,20 +92,23 @@ public class MoimController {
 	}
 
 	@RequestMapping("/mymoim.show")
-	public ModelAndView mymoim(MoimMemberDto moimMemberDto) {
+	public ModelAndView mymoim(MoimMemberDto moimMemberDto, HttpSession session) {
 		String mid = moimMemberDto.getMid()+"";
 		MoimDto md = moimService.MyMoim(mid);
+		session.setAttribute("mminfo", md);
 		
-		MoimMemberDto mmd = moimMemberService.MoimCheck(moimMemberDto);
+		MoimMemberDto mmd = moimMemberService.MoimCheck(moimMemberDto.getId(), mid);
+		session.setAttribute("moimcheck", mmd);
 		
 		List<MemberListDto> moimmemberlist = moimMemberService.MoimMemberList(mid);
+		session.setAttribute("moimmemberlist", moimmemberlist);
 		int moimmembercount = moimMemberService.MoimMemberCount(mid);
-
+		session.setAttribute("moimmembercount", moimmembercount);
+		
+		List<BoardDto> list= boardService.List(mid);
+		session.setAttribute("list", list);
+		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("mminfo", md);
-		mav.addObject("moimcheck", mmd);
-		mav.addObject("moimmemberlist", moimmemberlist);
-		mav.addObject("moimmembercount", moimmembercount);
 		mav.setViewName("/moim/moimmain");
 		return mav;
 	}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+	<bean id="ds" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:comp/env/jdbc/showmoim"></property>
+	</bean>
+	
+	<bean id="ssf" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="ds"/>
+		<property name="configLocation" value="classpath:com/showmoim/config/mybatis/SqlMapConfig.xml"/>
+	</bean>
+	
+	<bean id="sst" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="ssf"/>
+	</bean>
+	
+	<bean id="modao" class="com.showmoim.model.MoimDao">
+		<property name="sqlSession" ref="sst"/>
+	</bean>
+	
+	<bean id="moservice" class="com.showmoim.service.MoimService">
+		<property name="moimDao" ref="modao"></property>
+	</bean>
+	
+	<bean id="momdao" class="com.showmoim.model.MoimMemberDao">
+		<property name="sqlSession" ref="sst"/>
+	</bean>
+	
+	<bean id="momservice" class="com.showmoim.service.MoimMemberService">
+		<property name="moimMemberDao" ref="momdao"></property>
+	</bean>
+
+</beans>
