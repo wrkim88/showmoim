@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.showmoim.model.MoimMemberDao">
+    <update id="moimjoin" parameterType="mmdto">
+        insert into moimmember
+        values (#{id}, #{mid}, #{grade}, #{nick})
+    </update>
+    
+    <select id="moimcheck" parameterType="java.util.Map" resultType="mmdto">
+        select *
+        from moimmember
+        where id=#{id}
+        and mid=#{mid}
+    </select>
+    
+    <select id="moimmembercount" parameterType="String" resultType="int">
+        select count(mid)
+        from moimmember
+        where mid=#{mid}
+    </select>
+    
+    <select id="moimmemberlist" parameterType="String" resultType="mldto">
+        select *
+        from moimmember, member
+        where moimmember.id = member.id
+        and mid=#{mid}
+        order by grade
+    </select>
+    
+</mapper>
